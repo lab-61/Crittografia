@@ -1,0 +1,919 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usepackage{microtype}
+\usetheme{Frankfurt}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows.meta}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language italian
+\language_package babel
+\inputencoding utf8
+\fontencoding global
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.75in
+\topmargin 0.6in
+\rightmargin 0.75in
+\bottommargin 0.6in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title (Plain Frame)
+Elementi di sicurezza e crittografia
+\end_layout
+
+\begin_layout Author
+lab61
+\end_layout
+
+\begin_layout Date
+1 Ottobre 2016
+\begin_inset Newline newline
+\end_inset
+
+Circolo Anarchico Ponte della Ghisolfa
+\end_layout
+
+\begin_layout Section
+Introduzione alla sicurezza
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+La comunicazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Definiamo un modello di comunicazione Sorgente (S) - Canale (C) - Destinazione
+ (D).
+\begin_inset Newline newline
+\end_inset
+
+Il messaggio per arrivare da S a D deve passare necessariamente per C.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=40mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (s) {Sorgente};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=s] (c) {Canale};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=c] (d) {Destinazione};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (s) edge node {messaggio} (c);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (c) edge node {messaggio} (d);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+La necessità della sicurezza
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+Quando comunichiamo spesso necessitiamo di certe proprietà di sicurezza.
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Le proprità fondamentali
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Confidenzialità
+\end_layout
+
+\begin_layout Itemize
+Autenticità
+\end_layout
+
+\begin_layout Itemize
+Disponibilità
+\end_layout
+
+\begin_layout Itemize
+Integrità
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le proprietà (1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+di confidenzialità
+\end_layout
+
+\end_inset
+
+È la proprietà che assicura che il messaggio non venga compreso da un utente
+ esterno mentre transita nel canale.
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+di autenticità
+\end_layout
+
+\end_inset
+
+È la proprietà che assicura che il messaggio sia stato spedito realmente
+ da chi ci aspettiamo che l'abbia spedito.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le proprietà (2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+di disponibilità
+\end_layout
+
+\end_inset
+
+È la proprietà che assicura che una volta arrivato, il messaggio sia subito
+ disponibile.
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+di integrità
+\end_layout
+
+\end_inset
+
+È la proprità che ci assicura che il messaggio non sia cambiato dal momento
+ dell'invio a quello della ricezione, ovvero durante il transito nel canale.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Soluzioni? (1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soluzione banale
+\end_layout
+
+\end_inset
+
+Non comunico.
+\end_layout
+
+\begin_layout Standard
+Spesso è la maniera migliore di risolvere il problema, rimuovendo il messaggio
+ rimuovo anche il pericolo che altri lo conoscano.
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soluzione meno banale
+\end_layout
+
+\end_inset
+
+Nascondo il messaggio.
+\end_layout
+
+\begin_layout Standard
+È una soluzione praticabile e praticata, chiamata steganografia.
+ I messaggi possono ad esempio essere nascosti in immagini o occultati nei
+ modi più diversi.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Soluzioni? (2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soluzione naïve
+\end_layout
+
+\end_inset
+
+Blindare il canale.
+\end_layout
+
+\begin_layout Standard
+È una soluzione chiaramente inattuabile data la natura di internet.
+ Internet è infatti una rete distribuita e i messaggi passano da molti intermedi
+ari prima di arrivare a destinazione.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm, auto, scale=0.6, transform shape]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (s) at (0,0) {Sorgente};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=s, state,,node distance=30mm]  (n0) {$N_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n0, state] (n1) {$N_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [above of=n1, state] (n2) {$N_2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=n1, state] (n3) {$N_3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n1, state] (n4) {$N_4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n4, state] (n5) {$N_5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n5,node distance=30mm] (d) {Destinazione};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (s) edge node {} (n0);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n0) edge node {} (n1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n0) edge node {} (n2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n0) edge node {} (n3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n1) edge node {} (n2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n1) edge node {} (n3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n3) edge node {} (n4);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n4) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n4) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n2) edge node {} (n4);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n2) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n3) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n5) edge node {} (d);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (2,3) -- (10,3) -- (10,-3) -- (2,-3) -- (2,3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below] (label) at (9,2.8) {Canale};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+La crittografia
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+L'idea della crittografia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Perciò nasce l'idea della crittografia, ovvero un meccanismo che permette
+ di trasformare il messaggio in un altro altro, incomprensibile per chiunque,
+ e che solo il possessore della chiave potrà ritrasformare in quello originale.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+disegno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Formalmente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Un crittosistema 
+\begin_inset Formula $\Xi$
+\end_inset
+
+ è una quintupla (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathcal{P,C,K,E,D}$
+\end_layout
+
+\end_inset
+
+) dove:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+è l'insieme dei messaggi in chiaro,
+\end_layout
+
+\begin_layout Itemize
+è l'insieme dei messaggi cifrati,
+\end_layout
+
+\begin_layout Itemize
+è l'insieme delle chiavi,
+\end_layout
+
+\begin_layout Itemize
+è la famiglia di funzioni di cifratura iniettive da a tale che,
+\end_layout
+
+\begin_layout Itemize
+è la famiglia di funzioni di decifratura biiettive da a a tale che,
+\end_layout
+
+\begin_layout Standard
+tale che ...
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+da sistemare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le tecniche
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Esistono fondamentalmente due diversi meccanismi di cifratura: a chiave
+ pubblica e a chiave privata che a loro volta si basano su diversi tipi
+ di algoritmi.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Crittografia simmetrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Crittografia asimmetrica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diffie-Hellman
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3DES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Curve ellittiche
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RSA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gli algoritmi che permettono l'effettivo funzionamento della crittografia
+ si basano in particolare sulla teoria dei numeri, sull'algebra (tipicamente
+ dei campi finiti), sulla teoria della probabilità e sulla teoria della
+ complessità computazionale.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\end_body
+\end_document
