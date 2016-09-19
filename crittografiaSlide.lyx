@@ -138,7 +138,7 @@ Il messaggio per arrivare da S a D transita per C.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 1cm
+\begin_inset VSpace 0.8cm
 \end_inset
 
 
@@ -173,9 +173,9 @@ node (s) at (0,0) {Sorgente};
 
 	
 \backslash
-node (a) [below of=s,node distance=8mm] 	{
+node (a) [below of=s,node distance=9mm] 	{
 \backslash
-includegraphics[height=1cm]{canal_alice_dep.pdf}Alice};
+includegraphics[height=1.2cm]{canal_alice_dep.pdf}Alice};
 \end_layout
 
 \begin_layout Plain Layout
@@ -217,9 +217,9 @@ node [right of=m] (d) {Destinazione};
 
 	
 \backslash
-node (b) [below of=d,node distance=8mm] 	{
+node (b) [below of=d,node distance=9mm] 	{
 \backslash
-includegraphics[height=1cm]{canal_bob_dep.pdf}Bob};
+includegraphics[height=1.2cm]{canal_bob_dep.pdf}Bob};
 \end_layout
 
 \begin_layout Plain Layout
