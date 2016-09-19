@@ -316,7 +316,7 @@ Integrità
 status open
 
 \begin_layout Plain Layout
-Le proprietà (1)
+Le proprietà fondamentali (1)
 \end_layout
 
 \end_inset
@@ -325,16 +325,13 @@ Le proprietà (1)
 \end_layout
 
 \begin_deeper
-\begin_layout Definition
-\begin_inset Argument 2
-status open
+\begin_layout Standard
 
-\begin_layout Plain Layout
-di confidenzialità
+\series bold
+Confidenzialità
 \end_layout
 
-\end_inset
-
+\begin_layout Definition
 È la proprietà che assicura che il messaggio non venga compreso da un utente
  esterno mentre transita nel canale.
 \end_layout
@@ -343,16 +340,13 @@ di confidenzialità
 
 \end_layout
 
-\begin_layout Definition
-\begin_inset Argument 2
-status open
+\begin_layout Standard
 
-\begin_layout Plain Layout
-di autenticità
+\series bold
+Autenticità
 \end_layout
 
-\end_inset
-
+\begin_layout Definition
 È la proprietà che assicura che il messaggio sia stato spedito realmente
  da chi ci aspettiamo che l'abbia spedito.
 \end_layout
@@ -367,7 +361,7 @@ di autenticità
 status open
 
 \begin_layout Plain Layout
-Le proprietà (2)
+Le proprietà fondamentali (2)
 \end_layout
 
 \end_inset
@@ -376,16 +370,13 @@ Le proprietà (2)
 \end_layout
 
 \begin_deeper
-\begin_layout Definition
-\begin_inset Argument 2
-status open
+\begin_layout Standard
 
-\begin_layout Plain Layout
-di disponibilità
+\series bold
+Disponibilità
 \end_layout
 
-\end_inset
-
+\begin_layout Definition
 È la proprietà che assicura che una volta arrivato, il messaggio sia subito
  disponibile.
 \end_layout
@@ -394,16 +385,15 @@ di disponibilità
 
 \end_layout
 
-\begin_layout Definition
-\begin_inset Argument 2
-status open
+\end_deeper
+\begin_layout Frame
 
-\begin_layout Plain Layout
-di integrità
+\series bold
+Integrità
 \end_layout
 
-\end_inset
-
+\begin_deeper
+\begin_layout Definition
 È la proprità che ci assicura che il messaggio non sia cambiato dal momento
  dell'invio a quello della ricezione, ovvero durante il transito nel canale.
 \end_layout
