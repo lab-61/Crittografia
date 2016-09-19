@@ -8,11 +8,26 @@
 \usetheme{Frankfurt}
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning,arrows.meta}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[text line]{
+\parbox{0.8\linewidth}{
+   		 \vspace*{-8pt}\insertshorttitle~ - \insertshortauthor
+ 	 }
+  	\hfill%
+  	\parbox{0.15\linewidth}{
+    		\vspace*{-8pt}\raggedleft\insertpagenumber~/\inserttotalframenumber
+ 	 }
+}
+\usepackage{ae,aecompl}
+\usepackage[italian]{babel}
+\uselanguage{italian}
+\languagepath{italian}
+\deftranslation[to=italian]{Definition}{Definizione}
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language italian
-\language_package babel
+\language_package none
 \inputencoding utf8
 \fontencoding global
 \font_roman lmodern
@@ -89,10 +104,6 @@ lab61
 
 \begin_layout Date
 1 Ottobre 2016
-\begin_inset Newline newline
-\end_inset
-
-Circolo Anarchico Ponte della Ghisolfa
 \end_layout
 
 \begin_layout Section
@@ -114,12 +125,15 @@ La comunicazione
 
 \begin_deeper
 \begin_layout Definition
-Definiamo un modello di comunicazione Sorgente (S) - Canale (C) - Destinazione
- (D).
+Definiamo un modello di comunicazione:
 \begin_inset Newline newline
 \end_inset
 
-Il messaggio per arrivare da S a D deve passare necessariamente per C.
+Sorgente (S) - Canale (C) - Destinazione (D).
+\begin_inset Newline newline
+\end_inset
+
+Il messaggio per arrivare da S a D transita per C.
  
 \end_layout
 
@@ -152,35 +166,74 @@ begin{tikzpicture}[node distance=40mm,auto]
 
 	
 \backslash
-node (s) {Sorgente};
+node (s) at (0,0) {Sorgente};
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-node [right of=s] (c) {Canale};
+node (a) [below of=s,node distance=8mm] 	{
+\backslash
+includegraphics[height=1cm]{canal_alice_dep.pdf}Alice};
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-node [right of=c] (d) {Destinazione};
+draw (0.8,-0.3) -- (6.9,-0.3);
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-draw[->] (s) edge node {messaggio} (c);
+draw (0.8,0.3) -- (6.9,0.3);
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-draw[->] (c) edge node {messaggio} (d);
+node [right of=s] (m) {messaggio};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [above of=m,node distance=6mm] (c) {Canale};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m] (d) {Destinazione};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (b) [below of=d,node distance=8mm] 	{
+\backslash
+includegraphics[height=1cm]{canal_bob_dep.pdf}Bob};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (s) edge node {} (m);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (d);
 \end_layout
 
 \begin_layout Plain Layout
@@ -456,8 +509,15 @@ ari prima di arrivare a destinazione.
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -671,8 +731,9 @@ L'idea della crittografia
 \begin_deeper
 \begin_layout Standard
 Perciò nasce l'idea della crittografia, ovvero un meccanismo che permette
- di trasformare il messaggio in un altro altro, incomprensibile per chiunque,
- e che solo il possessore della chiave potrà ritrasformare in quello originale.
+ di trasformare il messaggio M1 in un altro altro M2, incomprensibile per
+ chiunque, e che solo il possessore della chiave potrà ritrasformare in
+ quello originale M1.
 \begin_inset Note Note
 status open
 
@@ -710,16 +771,7 @@ Un crittosistema
 \end_inset
 
  è una quintupla (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-mathcal{P,C,K,E,D}$
-\end_layout
-
+\begin_inset Formula $\mathcal{P},\mathcal{C},\mathcal{K},\mathcal{E},\mathcal{D}$
 \end_inset
 
 ) dove:
@@ -727,37 +779,74 @@ mathcal{P,C,K,E,D}$
 
 \begin_deeper
 \begin_layout Itemize
-è l'insieme dei messaggi in chiaro,
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+ è l'insieme dei messaggi in chiaro,
 \end_layout
 
 \begin_layout Itemize
-è l'insieme dei messaggi cifrati,
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ è l'insieme dei messaggi cifrati,
 \end_layout
 
 \begin_layout Itemize
-è l'insieme delle chiavi,
+\begin_inset Formula $\mathcal{K}$
+\end_inset
+
+ è l'insieme delle chiavi,
 \end_layout
 
 \begin_layout Itemize
-è la famiglia di funzioni di cifratura iniettive da a tale che,
+\begin_inset Formula $\mathcal{E}=\{E_{k}|\,k\in\mathcal{K}\}$
+\end_inset
+
+ è la famiglia di funzioni di cifratura iniettive tale che 
+\begin_inset Formula $E_{k}:\mathcal{P}\rightarrow\mathcal{C}$
+\end_inset
+
+ per ogni 
+\begin_inset Formula $k\in\mathcal{K}$
+\end_inset
+
+,
 \end_layout
 
 \begin_layout Itemize
-è la famiglia di funzioni di decifratura biiettive da a a tale che,
+\begin_inset Formula $\mathcal{D}=\{D_{k}|\,k\in\mathcal{K}\}$
+\end_inset
+
+ è la famiglia di funzioni di decifratura biiettive tale che 
+\begin_inset Formula $D_{k}:\mathcal{C}\rightarrow\mathcal{P}$
+\end_inset
+
+ per ogni 
+\begin_inset Formula $k\in\mathcal{K}$
+\end_inset
+
+,
 \end_layout
 
 \begin_layout Standard
-tale che ...
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-da sistemare
-\end_layout
-
+tale che per ogni 
+\begin_inset Formula $e\in\mathcal{K}$
 \end_inset
 
+ esiste unica 
+\begin_inset Formula $d\in\mathcal{K}$
+\end_inset
 
+ tale 
+\begin_inset Formula $D_{d}(E_{e}(m))=m$
+\end_inset
+
+, per ogni 
+\begin_inset Formula $m\in\mathcal{P}$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -787,6 +876,8 @@ Esistono fondamentalmente due diversi meccanismi di cifratura: a chiave
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -911,9 +1002,71 @@ Gli algoritmi che permettono l'effettivo funzionamento della crittografia
 
 \end_layout
 
-\begin_layout Frame
+\begin_layout Separator
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Crittografia simmetrica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+La crittografia simmetrica è un meccanismo che utilizza la stessa chiave
+ per cifrare e decifrare il messaggio.
+\begin_inset Newline newline
+\end_inset
+
+
+\size small
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{7cm}{!}{
+\end_layout
+
+\end_inset
+
+Formalmente 
+\begin_inset Formula $D_{k}(E_{k}(m))=m$
+\end_inset
+
+ per ogni 
+\begin_inset Formula $m\in\mathcal{P}$
+\end_inset
+
+ e per ogni 
+\begin_inset Formula $k\in\mathcal{K}$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
