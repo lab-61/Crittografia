@@ -9,20 +9,23 @@
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning,arrows.meta}
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[text line]{
-\parbox{0.8\linewidth}{
-   		 \vspace*{-8pt}\insertshorttitle~ - \insertshortauthor
- 	 }
-  	\hfill%
-  	\parbox{0.15\linewidth}{
-    		\vspace*{-8pt}\raggedleft\insertpagenumber~/\inserttotalframenumber
- 	 }
-}
+\useoutertheme{split}
+%\setbeamertemplate{footline}[text line]{
+%\parbox{0.8\linewidth}{
+%   		 \vspace*{-8pt}\insertshorttitle~ - \insertshortauthor
+% 	 }
+%  	\hfill%
+%  	\parbox{0.15\linewidth}{
+%    		\vspace*{-8pt}\raggedleft\insertpagenumber~/\inserttotalframenumber
+%
+% 	 }
+%}
 \usepackage{ae,aecompl}
 \usepackage[italian]{babel}
 \uselanguage{italian}
 \languagepath{italian}
 \deftranslation[to=italian]{Definition}{Definizione}
+\deftranslation[to=italian]{Example}{Esempio}
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
@@ -99,11 +102,11 @@ Elementi di sicurezza e crittografia
 \end_layout
 
 \begin_layout Author
-lab61
+LAB61
 \end_layout
 
 \begin_layout Date
-1 Ottobre 2016
+Ponte della Ghisolfa, 20 Ottobre 2016
 \end_layout
 
 \begin_layout Section
@@ -129,11 +132,27 @@ Definiamo un modello di comunicazione:
 \begin_inset Newline newline
 \end_inset
 
-Sorgente (S) - Canale (C) - Destinazione (D).
+
+\series bold
+Sorgente
+\series default
+ (S) - 
+\series bold
+Canale
+\series default
+ (C) - 
+\series bold
+Destinazione
+\series default
+ (D).
 \begin_inset Newline newline
 \end_inset
 
-Il messaggio per arrivare da S a D transita per C.
+Il 
+\series bold
+messaggio
+\series default
+ per arrivare da S a D transita per C.
  
 \end_layout
 
@@ -146,7 +165,7 @@ Il messaggio per arrivare da S a D transita per C.
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -166,7 +185,9 @@ begin{tikzpicture}[node distance=40mm,auto]
 
 	
 \backslash
-node (s) at (0,0) {Sorgente};
+node (s) at (0,0) {
+\backslash
+bf{Sorgente}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -203,14 +224,18 @@ node [right of=s] (m) {messaggio};
 
 	
 \backslash
-node [above of=m,node distance=6mm] (c) {Canale};
+node [above of=m,node distance=6mm] (c) {
+\backslash
+bf{Canale}};
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-node [right of=m] (d) {Destinazione};
+node [right of=m] (d) {
+\backslash
+bf{Destinazione}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -268,19 +293,186 @@ La necessità della sicurezza
 
 \begin_deeper
 \begin_layout Block
-Quando comunichiamo spesso necessitiamo di certe proprietà di sicurezza.
+Quando comunichiamo spesso necessitiamo di certe proprietà di 
+\series bold
+sicurezza
+\series default
+.
 \end_layout
 
 \begin_layout Separator
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Argument 2
-status open
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
-Le proprità fondamentali
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=40mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (s) at (0,0) {
+\backslash
+bf{Sorgente}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (a) [below of=s,node distance=9mm] 		{
+\backslash
+includegraphics[height=1.2cm]{canal_alice_dep.pdf}Alice};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (0.8,-0.3) -- (6.9,-0.3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (0.8,0.3) -- (6.9,0.3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=s] (m) {messaggio};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [above of=m,node distance=6mm] (c) {
+\backslash
+bf{Canale}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=m,node distance=12mm] (cia) 		{
+\backslash
+includegraphics[height=1.2cm]{SouthParkme.JPG}NSA};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m] (d) {
+\backslash
+bf{Destinazione}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (b) [below of=d,node distance=9mm] 		{
+\backslash
+includegraphics[height=1.2cm]{canal_bob_dep.pdf}Bob};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (s) edge node {} (m);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (d);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[color=red,line width=0.2mm] (3,-1.7) -- (2,-1.7);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->,color=red,line width=0.2mm] (2,-1.7) -- (2,-0.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[color=red,line width=0.2mm] (5,-1.7) -- (6,-1.7);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->,color=red,line width=0.2mm] (6,-1.7) -- (6,-0.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (l1) at (2.5,-1.9) {
+\backslash
+bf{
+\backslash
+textcolor{red}{Ascolta}}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (l1) at (5.8,-1.9) {
+\backslash
+bf{
+\backslash
+textcolor{red}{Modifica}}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
 \end_layout
 
 \end_inset
@@ -288,24 +480,6 @@ Le proprità fondamentali
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Confidenzialità
-\end_layout
-
-\begin_layout Itemize
-Autenticità
-\end_layout
-
-\begin_layout Itemize
-Disponibilità
-\end_layout
-
-\begin_layout Itemize
-Integrità
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -449,11 +623,21 @@ Soluzione meno banale
 
 \end_inset
 
-Nascondo il messaggio.
+
+\series bold
+Nascondo
+\series default
+ il messaggio.
 \end_layout
 
 \begin_layout Standard
-È una soluzione praticabile e praticata, chiamata steganografia.
+È una soluzione praticabile e praticata, chiamata 
+\series bold
+\shape italic
+steganografia
+\series default
+\shape default
+.
  I messaggi possono ad esempio essere nascosti in immagini o occultati nei
  modi più diversi.
  
@@ -493,21 +677,17 @@ Blindare il canale.
 
 \begin_layout Standard
 È una soluzione chiaramente inattuabile data la natura di internet.
- Internet è infatti una rete distribuita e i messaggi passano da molti intermedi
-ari prima di arrivare a destinazione.
+ Internet è infatti una 
+\series bold
+rete distribuita
+\series default
+ e i messaggi passano da molti intermediari prima di arrivare a destinazione.
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace 0.3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Example
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -520,14 +700,16 @@ centering
 
 
 \backslash
-begin{tikzpicture}[node distance=20mm, auto, scale=0.6, transform shape]
+begin{tikzpicture}[node distance=20mm, auto, scale=0.55, transform shape]
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-node (s) at (0,0) {Sorgente};
+node (s) at (0,0) {
+\backslash
+bf{Sorgente}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -576,21 +758,23 @@ node [right of=n4, state] (n5) {$N_5$};
 
 	
 \backslash
-node [right of=n5,node distance=30mm] (d) {Destinazione};
+node [right of=n5,node distance=30mm] (d) {
+\backslash
+bf{Destinazione}};
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-draw (s) edge node {} (n0);
+draw[line width=0.2mm,color=red] (s) edge node {} (n0);
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-draw (n0) edge node {} (n1);
+draw[line width=0.2mm,color=red] (n0) edge node {} (n1);
 \end_layout
 
 \begin_layout Plain Layout
@@ -611,7 +795,7 @@ draw (n0) edge node {} (n3);
 
 	
 \backslash
-draw (n1) edge node {} (n2);
+draw[line width=0.2mm,color=red] (n1) edge node {} (n2);
 \end_layout
 
 \begin_layout Plain Layout
@@ -632,21 +816,14 @@ draw (n3) edge node {} (n4);
 
 	
 \backslash
-draw (n4) edge node {} (n5);
+draw[line width=0.2mm,color=red] (n4) edge node {} (n5);
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-draw (n4) edge node {} (n5);
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-draw (n2) edge node {} (n4);
+draw[line width=0.2mm,color=red] (n2) edge node {} (n4);
 \end_layout
 
 \begin_layout Plain Layout
@@ -667,7 +844,7 @@ draw (n3) edge node {} (n5);
 
 	
 \backslash
-draw (n5) edge node {} (d);
+draw[line width=0.2mm,color=red] (n5) edge node {} (d);
 \end_layout
 
 \begin_layout Plain Layout
@@ -681,7 +858,9 @@ draw (2,3) -- (10,3) -- (10,-3) -- (2,-3) -- (2,3);
 
 	
 \backslash
-node [below] (label) at (9,2.8) {Canale};
+node [below] (label) at (9,2.8) {
+\backslash
+bf{Canale}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -756,7 +935,13 @@ Formalmente
 
 \begin_deeper
 \begin_layout Definition
-Un crittosistema 
+Un 
+\series bold
+\shape italic
+crittosistema
+\series default
+\shape default
+ 
 \begin_inset Formula $\Xi$
 \end_inset
 
@@ -860,9 +1045,19 @@ Le tecniche
 
 \begin_deeper
 \begin_layout Standard
-Esistono fondamentalmente due diversi meccanismi di cifratura: a chiave
- pubblica e a chiave privata che a loro volta si basano su diversi tipi
- di algoritmi.
+Esistono fondamentalmente due diversi meccanismi di cifratura: a 
+\series bold
+chiave pubblica
+\series default
+ e a 
+\series bold
+chiave privata
+\series default
+ che a loro volta si basano su diversi tipi di 
+\series bold
+algoritmi
+\series default
+.
 \end_layout
 
 \begin_layout Standard
@@ -874,10 +1069,12 @@ Esistono fondamentalmente due diversi meccanismi di cifratura: a chiave
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Crittografia simmetrica
 \end_layout
 
@@ -887,6 +1084,8 @@ Crittografia simmetrica
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Crittografia asimmetrica
 \end_layout
 
@@ -982,9 +1181,9 @@ RSA
 
 \begin_layout Standard
 Gli algoritmi che permettono l'effettivo funzionamento della crittografia
- si basano in particolare sulla teoria dei numeri, sull'algebra (tipicamente
- dei campi finiti), sulla teoria della probabilità e sulla teoria della
- complessità computazionale.
+ si basano su della matematica parecchio avanzata e in particolare sulla
+ teoria dei numeri, sull'algebra (tipicamente dei campi finiti), sulla teoria
+ della probabilità e sulla teoria della complessità computazionale.
 \end_layout
 
 \end_deeper
@@ -1011,8 +1210,12 @@ Crittografia simmetrica
 
 \begin_deeper
 \begin_layout Definition
-La crittografia simmetrica è un meccanismo che utilizza la stessa chiave
- per cifrare e decifrare il messaggio.
+La 
+\series bold
+crittografia simmetrica
+\series default
+ è un meccanismo che utilizza la stessa chiave per cifrare e decifrare il
+ messaggio.
 \begin_inset Newline newline
 \end_inset
 
