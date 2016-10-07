@@ -165,7 +165,7 @@ messaggio
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -687,7 +687,7 @@ rete distribuita
 
 \begin_layout Example
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -903,11 +903,159 @@ Perciò nasce l'idea della crittografia, ovvero un meccanismo che permette
  di trasformare il messaggio M1 in un altro altro M2, incomprensibile per
  chiunque, e che solo il possessore della chiave potrà ritrasformare in
  quello originale M1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-disegno
+etichette sotto figure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m1) at (0,0) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{macNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{macRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2] (m3) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
 \end_layout
 
 \end_inset
@@ -1258,6 +1406,209 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+etichette sotto figure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m1) at (0,0) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{macNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{macRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2] (m3) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Problema!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+E lo scambio della chiave?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Crittografia asimmetrica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+La 
+\series bold
+crittografia asimmetrica
+\series default
+ è un meccanismo a due chiavi.
+ Se si cifra il messaggio con la prima, con la seconda lo si decifra e viceversa.
 \end_layout
 
 \end_deeper
