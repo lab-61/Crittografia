@@ -157,7 +157,7 @@ resizebox{5cm}{!}{Distribuito sotto licenza CC BY-NC-SA 3.0}
 
 
 \begin_inset Graphics
-	filename by-nc-sa.eu.eps
+	filename by-nc-sa-eu.pdf
 	scale 30
 
 \end_inset
@@ -1701,7 +1701,6 @@ status open
 
 \begin_layout Plain Layout
 
-\size small
 }
 \end_layout
 
@@ -2013,6 +2012,280 @@ Esempio di comunicazione confidenziale
 
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m) at (0,0) {
+\backslash
+textbf{Krusciov}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+textbf{Invio a Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m) at (0,0) {
+\backslash
+textbf{Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout Separator
 
 \end_layout
@@ -2117,6 +2390,276 @@ Esempio di comunicazione autentica
 
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m) at (0,0) {
+\backslash
+textbf{Krusciov}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+textbf{Invio a Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m) at (0,0) {
+\backslash
+textbf{Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Separator
 
 \end_layout
