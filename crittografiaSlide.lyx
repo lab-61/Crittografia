@@ -97,7 +97,7 @@
 
 \begin_body
 
-\begin_layout Title (Plain Frame)
+\begin_layout Title
 Elementi di sicurezza e crittografia
 \end_layout
 
@@ -165,7 +165,7 @@ messaggio
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -910,24 +910,8 @@ Perciò nasce l'idea della crittografia, ovvero un meccanismo che permette
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-etichette sotto figure
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \begin_inset ERT
 status collapsed
@@ -950,7 +934,7 @@ begin{tikzpicture}[node distance=20mm,auto]
 
 	
 \backslash
-node (m1) at (0,0) {
+node [label=below:M1](m1) at (0,0) {
 \backslash
 includegraphics[height=0.7cm]{docNero.pdf}};
 \end_layout
@@ -991,7 +975,7 @@ draw[->] (chiave1) edge node {} (mac1);
 
 	
 \backslash
-node [right of=mac1] (m2) {
+node [right of=mac1,label=below:M2] (m2) {
 \backslash
 includegraphics[height=0.7cm]{docRosso.pdf}};
 \end_layout
@@ -1039,7 +1023,7 @@ draw[->] (chiave2) edge node {} (mac2);
 
 	
 \backslash
-node [right of=mac2] (m3) {
+node [right of=mac2,label=below:M1] (m3) {
 \backslash
 includegraphics[height=0.7cm]{docNero.pdf}};
 \end_layout
@@ -1377,7 +1361,7 @@ status open
 
 
 \backslash
-resizebox{7cm}{!}{
+resizebox{10cm}{!}{
 \end_layout
 
 \end_inset
@@ -1394,7 +1378,15 @@ Formalmente
 \begin_inset Formula $k\in\mathcal{K}$
 \end_inset
 
-.
+, con 
+\begin_inset Formula $D_{k}$
+\end_inset
+
+ e 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ semplici (veloci) da calcolare.
 \begin_inset ERT
 status open
 
@@ -1413,21 +1405,11 @@ status open
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-etichette sotto figure
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1447,7 +1429,7 @@ begin{tikzpicture}[node distance=20mm,auto]
 
 	
 \backslash
-node (m1) at (0,0) {
+node[label=below:M1] (m1) at (0,0) {
 \backslash
 includegraphics[height=0.7cm]{docNero.pdf}};
 \end_layout
@@ -1488,7 +1470,7 @@ draw[->] (chiave1) edge node {} (mac1);
 
 	
 \backslash
-node [right of=mac1] (m2) {
+node [right of=mac1,label=below:M2] (m2) {
 \backslash
 includegraphics[height=0.7cm]{docRosso.pdf}};
 \end_layout
@@ -1536,7 +1518,7 @@ draw[->] (chiave2) edge node {} (mac2);
 
 	
 \backslash
-node [right of=mac2] (m3) {
+node [right of=mac2,label=below:M1] (m3) {
 \backslash
 includegraphics[height=0.7cm]{docNero.pdf}};
 \end_layout
@@ -1580,7 +1562,37 @@ Problema!
 
 \begin_deeper
 \begin_layout Standard
+
+\series bold
+\color red
 E lo scambio della chiave?
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nella crittografia simmetrica sia il mittente che il ricevente devono conoscere
+ la chiave, cioè devono essersela scambiata in qualche momento.
+ A questo punto però lo scambio della chiave come fa ad avvenire in maniera
+ sicura? Se utilizzassimo di nuovo un metodo di cifratura simmetrico per
+ cifrare la chiave saremmo al punto di partenza.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per questo tipicamente o si utilizza per scambiare la chiave un altro canale
+ considerato sicuro oppure si ricorre alla...
 \end_layout
 
 \end_deeper
@@ -1607,10 +1619,201 @@ La
 \series bold
 crittografia asimmetrica
 \series default
- è un meccanismo a due chiavi.
+ è un meccanismo che funziona con due chiavi.
  Se si cifra il messaggio con la prima, con la seconda lo si decifra e viceversa.
+\size small
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{7cm}{!}{
+\end_layout
+
+\end_inset
+
+In realtà non è così, ma possiamo immaginarlo in questo modo.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\size small
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:M1] (m1) at (0,0) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{macNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,label={[align=left]below:chiave
+\backslash
+
+\backslash
+privata/pubblica}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label=below:M2] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{macRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2,label={[align=left]below:chiave
+\backslash
+
+\backslash
+pubblica/privata}] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label=below:M1] (m3) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Esempio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
