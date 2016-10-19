@@ -213,6 +213,22 @@ messaggio
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace 0.8cm
 \end_inset
 
@@ -357,6 +373,22 @@ sicurezza
 \end_layout
 
 \begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -566,6 +598,22 @@ Confidenzialità
  esterno mentre transita nel canale.
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Separator
 
 \end_layout
@@ -609,6 +657,22 @@ Disponibilità
 \begin_layout Definition
 È la proprietà che assicura che una volta arrivato, il messaggio sia subito
  disponibile.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Separator
@@ -661,6 +725,22 @@ Non comunico.
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Spesso è la maniera migliore di risolvere il problema, rimuovendo il messaggio
  rimuovo anche il pericolo che altri lo conoscano.
 \end_layout
@@ -684,6 +764,22 @@ Soluzione meno banale
 Nascondo
 \series default
  il messaggio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -732,6 +828,22 @@ Blindare il canale.
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 È una soluzione chiaramente inattuabile data la natura di internet.
  Internet è infatti una 
 \series bold
@@ -739,6 +851,22 @@ rete distribuita
 \series default
  e i messaggi passano da molti intermediari prima di arrivare a destinazione.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Example
@@ -959,6 +1087,22 @@ Perciò nasce l'idea della crittografia, ovvero un meccanismo che permette
  di trasformare il messaggio M1 in un altro altro M2, incomprensibile per
  chiunque, e che solo il possessore della chiave potrà ritrasformare in
  quello originale M1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1465,6 +1609,22 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
@@ -1622,6 +1782,22 @@ Problema!
 \series bold
 \color red
 E lo scambio della chiave?
+\series default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1641,6 +1817,19 @@ Nella crittografia simmetrica sia il mittente che il ricevente devono conoscere
 
 \begin_layout Standard
 \begin_inset VSpace 0.8cm
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
 \end_inset
 
 
@@ -1712,6 +1901,22 @@ status open
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1880,6 +2085,19 @@ sistema crittografico asimmetrico
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \begin_inset VSpace 0.8cm
 \end_inset
 
@@ -1947,6 +2165,19 @@ Per la comunicazione bisogna seguire questi passaggi:
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Block
@@ -1972,6 +2203,18 @@ Algoritmo per la comunicazione confidenziale
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 2° passo
@@ -1980,6 +2223,18 @@ Algoritmo per la comunicazione confidenziale
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 3° passo
@@ -1988,6 +2243,22 @@ Algoritmo per la comunicazione confidenziale
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 In questa maniera mentre il messaggio transita nel canale il messaggio è
  cifrato e solo chi è in possesso della chiave privata corrispondente a
@@ -2015,7 +2286,7 @@ Esempio di comunicazione confidenziale
 \begin_deeper
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2152,13 +2423,26 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align left
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2321,6 +2605,19 @@ Per la comunicazione bisogna seguire questi passaggi:
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \begin_inset VSpace 0.4cm
 \end_inset
 
@@ -2350,6 +2647,18 @@ Algoritmo per la comunicazione autentica
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 2° passo
@@ -2358,6 +2667,18 @@ Algoritmo per la comunicazione autentica
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 3° passo
@@ -2366,6 +2687,22 @@ Algoritmo per la comunicazione autentica
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 In questa maniera il destinatario è sicuro che il mittente sia proprio chi
  deve essere (ha infatti utilizzato la propria chiave privata) perché altrimenti
@@ -2393,7 +2730,7 @@ Esempio di comunicazione autentica
 \begin_deeper
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2537,6 +2874,19 @@ end{tikzpicture}
 \align left
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2692,6 +3042,19 @@ autenticità
 
 \begin_layout Standard
 Per la comunicazione sicura bisogna seguire questi passaggi:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Block
@@ -2717,6 +3080,18 @@ Algoritmo per la comunicazione sicura
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 2° passo
@@ -2725,6 +3100,18 @@ Algoritmo per la comunicazione sicura
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 3° passo
@@ -2733,6 +3120,18 @@ Algoritmo per la comunicazione sicura
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 4° passo
@@ -2741,6 +3140,18 @@ Algoritmo per la comunicazione sicura
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
 
 \series bold
 5° passo
@@ -2798,6 +3209,22 @@ integrità
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 La prima è assicurata dal fatto che operazioni di decrittazione sono 
 \begin_inset Quotes eld
 \end_inset
@@ -2831,6 +3258,22 @@ impronta digitale
  l'hash sul testo arrivato e confrontarlo con quello arrivato.
  Se coincidono c'è un'altissima probabilità che il testo sia integro, se
  non coincidono certamente il testo arrivato è diverso da quello spedito.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
