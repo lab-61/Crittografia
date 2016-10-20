@@ -2299,9 +2299,11 @@ begin{tikzpicture}[node distance=20mm,auto]
 
 	
 \backslash
-node (m) at (0,0) {
+node[label=below:
 \backslash
-textbf{Krusciov}};
+textbf{Krusciov}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Krusciov.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2495,7 +2497,7 @@ draw[->] (m) edge node {} (m1);
 \backslash
 node [right of=m1] (mac1) {
 \backslash
-includegraphics[height=0.9cm]{lucchetto.pdf}};
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2519,7 +2521,7 @@ footnotesize{}chiave privata}
 \backslash
 footnotesize{}di Fidel}}] (chiave1) {
 \backslash
-includegraphics[height=0.4cm]{chiaveNera.pdf}};
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2743,9 +2745,11 @@ begin{tikzpicture}[node distance=20mm,auto]
 
 	
 \backslash
-node (m) at (0,0) {
+node[label=below:
 \backslash
-textbf{Krusciov}};
+textbf{Krusciov}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Krusciov.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2807,7 +2811,7 @@ footnotesize{}chiave privata}
 \backslash
 footnotesize{}di Nikita}}] (chiave1) {
 \backslash
-includegraphics[height=0.4cm]{chiaveNera.pdf}};
+includegraphics[height=0.4cm]{chiaveVerde.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2939,7 +2943,7 @@ draw[->] (m) edge node {} (m1);
 \backslash
 node [right of=m1] (mac1) {
 \backslash
-includegraphics[height=0.9cm]{lucchetto.pdf}};
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2963,7 +2967,7 @@ footnotesize{}chiave pubblica}
 \backslash
 footnotesize{}di Nikita}}] (chiave1) {
 \backslash
-includegraphics[height=0.4cm]{chiaveNera.pdf}};
+includegraphics[height=0.4cm]{chiaveBlu.pdf}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -3178,6 +3182,370 @@ Esempio conclusivo
 
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto,scale=0.8, transform shape]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Krusciov}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Krusciov.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveVerde.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,node distance=30mm] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+textbf{Invio a Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset VSpace 0.2cm
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto,scale=0.8, transform shape]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (m) at (0,0) {
+\backslash
+textbf{Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,node distance=30mm] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveBlu.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Separator
 
 \end_layout
@@ -3359,7 +3727,7 @@ key "key-4"
 
 \end_inset
 
-https://thenounproject.com/
+https://thenounproject.com/ - Viktor Vorobyev, Apirat Ditsayarak, Guilhem
 \end_layout
 
 \end_deeper
