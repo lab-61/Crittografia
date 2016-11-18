@@ -1,31 +1,44 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
-\usepackage{microtype}
-\usetheme{Frankfurt}
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning,arrows.meta}
-\setbeamertemplate{navigation symbols}{}
-\useoutertheme{split}
-%\setbeamertemplate{footline}[text line]{
-%\parbox{0.8\linewidth}{
-%   		 \vspace*{-8pt}\insertshorttitle~ - \insertshortauthor
-% 	 }
-%  	\hfill%
-%  	\parbox{0.15\linewidth}{
-%    		\vspace*{-8pt}\raggedleft\insertpagenumber~/\inserttotalframenumber
-%
-% 	 }
-%}
 \usepackage{ae,aecompl}
 \usepackage[italian]{babel}
 \uselanguage{italian}
 \languagepath{italian}
 \deftranslation[to=italian]{Definition}{Definizione}
 \deftranslation[to=italian]{Example}{Esempio}
+\usepackage{microtype}
+\usetheme{Frankfurt}
+\definecolor{blue1}{RGB}{51,51,179}
+\definecolor{blue2}{RGB}{0,0,204}
+\definecolor{blue3}{RGB}{0,0,153}
+\setbeamercolor{author in head/foot}{fg=white, bg=blue3}
+\setbeamercolor{title in head/foot}{fg=white, bg=blue2}
+\setbeamercolor{date in head/foot}{fg=white, bg=blue1}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{\insertshortinstitute}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
@@ -33,16 +46,16 @@
 \language_package none
 \inputencoding utf8
 \fontencoding global
-\font_roman lmodern
-\font_sans lmss
-\font_typewriter lmtt
-\font_math auto
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -99,14 +112,44 @@
 
 \begin_layout Title
 Elementi di sicurezza e crittografia
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Elementi di sicurezza e crittografia
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
 LAB61
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+LAB61
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Date
-Ponte della Ghisolfa, 20 Ottobre 2016
+18 Novembre 2016
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+18 Novembre 2016
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -187,6 +230,10 @@ status open
 La comunicazione
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -356,7 +403,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -371,6 +421,10 @@ La necessità della sicurezza
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -382,7 +436,10 @@ sicurezza
 .
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -579,7 +636,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -591,6 +651,10 @@ status open
 Le proprietà fondamentali (1)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -624,7 +688,10 @@ pause
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -640,7 +707,10 @@ Autenticità
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -652,6 +722,10 @@ status open
 Le proprietà fondamentali (2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -685,7 +759,10 @@ pause
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -694,6 +771,12 @@ pause
 
 \series bold
 Integrità
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -703,7 +786,10 @@ Integrità
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -715,6 +801,10 @@ status open
 Soluzioni? (1)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -755,7 +845,10 @@ Spesso è la maniera migliore di risolvere il problema, rimuovendo il messaggio
  rimuovo anche il pericolo che altri lo conoscano.
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -806,7 +899,10 @@ steganografia
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -818,6 +914,10 @@ status open
 Soluzioni? (2)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1070,7 +1170,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1086,6 +1189,10 @@ status open
 L'idea della crittografia
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1258,7 +1365,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1270,6 +1380,10 @@ status open
 Formalmente
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1292,6 +1406,10 @@ crittosistema
 \end_inset
 
 ) dove:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1368,7 +1486,10 @@ tale che per ogni
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1380,6 +1501,10 @@ status open
 Le tecniche
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1400,6 +1525,10 @@ chiave privata
 algoritmi
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1407,7 +1536,7 @@ algoritmi
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -1533,7 +1662,10 @@ Gli algoritmi che permettono l'effettivo funzionamento della crittografia
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1545,6 +1677,10 @@ status open
 Crittografia simmetrica
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1769,7 +1905,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1781,6 +1920,10 @@ status open
 Problema!
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1851,7 +1994,10 @@ Per questo tipicamente o si utilizza per scambiare la chiave un altro canale
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1863,6 +2009,10 @@ status open
 Crittografia asimmetrica
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2068,7 +2218,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2080,6 +2233,10 @@ status open
 Dogma della crittografia asimmetrica
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2136,7 +2293,10 @@ pubblica
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2148,6 +2308,10 @@ status open
 Funzionamento nella comunicazione - confidenzialità
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2198,6 +2362,10 @@ status open
 Algoritmo per la comunicazione confidenziale
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2276,7 +2444,10 @@ In questa maniera mentre il messaggio transita nel canale il messaggio è
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2288,6 +2459,10 @@ status open
 Esempio di comunicazione confidenziale
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2448,6 +2623,10 @@ pause
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2579,7 +2758,10 @@ end{tikzpicture}
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2591,6 +2773,10 @@ status open
 Funzionamento nella comunicazione - autenticità
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2641,6 +2827,10 @@ status open
 Algoritmo per la comunicazione autentica
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2719,7 +2909,10 @@ In questa maniera il destinatario è sicuro che il mittente sia proprio chi
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2731,6 +2924,10 @@ status open
 Esempio di comunicazione autentica
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2878,6 +3075,10 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3018,7 +3219,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3030,6 +3234,10 @@ status open
 Mettiamo tutto insieme!
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3073,6 +3281,10 @@ status open
 Algoritmo per la comunicazione sicura
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3169,7 +3381,10 @@ pause
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3181,6 +3396,10 @@ status open
 Esempio conclusivo
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3360,6 +3579,10 @@ draw[->] (m2) edge node {} (mac2);
 end{tikzpicture}
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3552,7 +3775,10 @@ end{tikzpicture}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3564,6 +3790,10 @@ status open
 Conclusioni
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3608,6 +3838,22 @@ veloci
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3663,7 +3909,10 @@ MD5
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3675,6 +3924,10 @@ status open
 Bibliografia
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
