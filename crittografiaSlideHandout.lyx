@@ -1,0 +1,3995 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows.meta}
+\usepackage{ae,aecompl}
+\usepackage[italian]{babel}
+\uselanguage{italian}
+\languagepath{italian}
+\deftranslation[to=italian]{Definition}{Definizione}
+\deftranslation[to=italian]{Example}{Esempio}
+\usepackage{microtype}
+\usetheme{Frankfurt}
+\definecolor{blue1}{RGB}{51,51,179}
+\definecolor{blue2}{RGB}{0,0,204}
+\definecolor{blue3}{RGB}{0,0,153}
+\setbeamercolor{author in head/foot}{fg=white, bg=blue3}
+\setbeamercolor{title in head/foot}{fg=white, bg=blue2}
+\setbeamercolor{date in head/foot}{fg=white, bg=blue1}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{\insertshortinstitute}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language italian
+\language_package none
+\inputencoding utf8
+\fontencoding global
+\font_roman "lmodern" "default"
+\font_sans "lmss" "default"
+\font_typewriter "lmtt" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.75in
+\topmargin 0.6in
+\rightmargin 0.75in
+\bottommargin 0.6in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Elementi di sicurezza e crittografia
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Elementi di sicurezza e crittografia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+LAB61
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+LAB61
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+18 Novembre 2016
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+18 Novembre 2016
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape italic
+
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape default
+\size small
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{5cm}{!}{Distribuito sotto licenza CC BY-NC-SA 3.0}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape italic
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename by-nc-sa-eu.pdf
+	scale 30
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{6cm}{!}{Nessun software proprietario è stato utilizzato per realizzare
+ questa presentazione}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduzione alla sicurezza
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+La comunicazione
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Definiamo un modello di comunicazione:
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Sorgente
+\series default
+ (S) - 
+\series bold
+Canale
+\series default
+ (C) - 
+\series bold
+Destinazione
+\series default
+ (D).
+\begin_inset Newline newline
+\end_inset
+
+Il 
+\series bold
+messaggio
+\series default
+ per arrivare da S a D transita per C.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=40mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (s) at (0,0) {
+\backslash
+bf{Sorgente}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (a) [below of=s,node distance=9mm] 	{
+\backslash
+includegraphics[height=1.2cm]{canal_alice_dep.pdf}Alice};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (0.8,-0.3) -- (6.9,-0.3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (0.8,0.3) -- (6.9,0.3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=s] (m) {messaggio};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [above of=m,node distance=6mm] (c) {
+\backslash
+bf{Canale}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m] (d) {
+\backslash
+bf{Destinazione}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (b) [below of=d,node distance=9mm] 	{
+\backslash
+includegraphics[height=1.2cm]{canal_bob_dep.pdf}Bob};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (s) edge node {} (m);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (d);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+La necessità della sicurezza
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+Quando comunichiamo spesso necessitiamo di certe proprietà di 
+\series bold
+sicurezza
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=40mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (s) at (0,0) {
+\backslash
+bf{Sorgente}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (a) [below of=s,node distance=9mm] 		{
+\backslash
+includegraphics[height=1.2cm]{canal_alice_dep.pdf}Alice};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (0.8,-0.3) -- (6.9,-0.3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (0.8,0.3) -- (6.9,0.3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=s] (m) {messaggio};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [above of=m,node distance=6mm] (c) {
+\backslash
+bf{Canale}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=m,node distance=12mm] (cia) 		{
+\backslash
+includegraphics[height=1.2cm]{SouthParkme.JPG}NSA};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m] (d) {
+\backslash
+bf{Destinazione}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (b) [below of=d,node distance=9mm] 		{
+\backslash
+includegraphics[height=1.2cm]{canal_bob_dep.pdf}Bob};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (s) edge node {} (m);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (d);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[color=red,line width=0.2mm] (3,-1.7) -- (2,-1.7);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->,color=red,line width=0.2mm] (2,-1.7) -- (2,-0.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[color=red,line width=0.2mm] (5,-1.7) -- (6,-1.7);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->,color=red,line width=0.2mm] (6,-1.7) -- (6,-0.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (l1) at (2.5,-1.9) {
+\backslash
+bf{
+\backslash
+textcolor{red}{Ascolta}}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (l1) at (5.8,-1.9) {
+\backslash
+bf{
+\backslash
+textcolor{red}{Modifica}}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le proprietà fondamentali (1)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Confidenzialità
+\end_layout
+
+\begin_layout Definition
+È la proprietà che assicura che il messaggio non venga compreso da un utente
+ esterno mentre transita nel canale.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Autenticità
+\end_layout
+
+\begin_layout Definition
+È la proprietà che assicura che il messaggio sia stato spedito realmente
+ da chi ci aspettiamo che l'abbia spedito.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le proprietà fondamentali (2)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Disponibilità
+\end_layout
+
+\begin_layout Definition
+È la proprietà che assicura che una volta arrivato, il messaggio sia subito
+ disponibile.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\series bold
+Integrità
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+È la proprità che ci assicura che il messaggio non sia cambiato dal momento
+ dell'invio a quello della ricezione, ovvero durante il transito nel canale.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Soluzioni? (1)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soluzione banale
+\end_layout
+
+\end_inset
+
+Non comunico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Spesso è la maniera migliore di risolvere il problema, rimuovendo il messaggio
+ rimuovo anche il pericolo che altri lo conoscano.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soluzione meno banale
+\end_layout
+
+\end_inset
+
+
+\series bold
+Nascondo
+\series default
+ il messaggio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+È una soluzione praticabile e praticata, chiamata 
+\series bold
+\shape italic
+steganografia
+\series default
+\shape default
+.
+ I messaggi possono ad esempio essere nascosti in immagini o occultati nei
+ modi più diversi.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Soluzioni? (2)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Soluzione naïve
+\end_layout
+
+\end_inset
+
+Blindare il canale.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+È una soluzione chiaramente inattuabile data la natura di internet.
+ Internet è infatti una 
+\series bold
+rete distribuita
+\series default
+ e i messaggi passano da molti intermediari prima di arrivare a destinazione.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm, auto, scale=0.55, transform shape]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node (s) at (0,0) {
+\backslash
+bf{Sorgente}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=s, state,,node distance=30mm]  (n0) {$N_0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n0, state] (n1) {$N_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [above of=n1, state] (n2) {$N_2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=n1, state] (n3) {$N_3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n1, state] (n4) {$N_4$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n4, state] (n5) {$N_5$};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=n5,node distance=30mm] (d) {
+\backslash
+bf{Destinazione}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[line width=0.2mm,color=red] (s) edge node {} (n0);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[line width=0.2mm,color=red] (n0) edge node {} (n1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n0) edge node {} (n2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n0) edge node {} (n3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[line width=0.2mm,color=red] (n1) edge node {} (n2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n1) edge node {} (n3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n3) edge node {} (n4);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[line width=0.2mm,color=red] (n4) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[line width=0.2mm,color=red] (n2) edge node {} (n4);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n2) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (n3) edge node {} (n5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[line width=0.2mm,color=red] (n5) edge node {} (d);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw (2,3) -- (10,3) -- (10,-3) -- (2,-3) -- (2,3);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below] (label) at (9,2.8) {
+\backslash
+bf{Canale}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+La crittografia
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+L'idea della crittografia
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Perciò nasce l'idea della crittografia, ovvero un meccanismo che permette
+ di trasformare il messaggio M1 in un altro altro M2, incomprensibile per
+ chiunque, e che solo il possessore della chiave potrà ritrasformare in
+ quello originale M1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [label=below:M1](m1) at (0,0) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{macNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label=below:M2] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{macRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label=below:M1] (m3) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Formalmente
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Un 
+\series bold
+\shape italic
+crittosistema
+\series default
+\shape default
+ 
+\begin_inset Formula $\Xi$
+\end_inset
+
+ è una quintupla (
+\begin_inset Formula $\mathcal{P},\mathcal{C},\mathcal{K},\mathcal{E},\mathcal{D}$
+\end_inset
+
+) dove:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+ è l'insieme dei messaggi in chiaro,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ è l'insieme dei messaggi cifrati,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{K}$
+\end_inset
+
+ è l'insieme delle chiavi,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{E}=\{E_{k}|\,k\in\mathcal{K}\}$
+\end_inset
+
+ è la famiglia di funzioni di cifratura iniettive tale che 
+\begin_inset Formula $E_{k}:\mathcal{P}\rightarrow\mathcal{C}$
+\end_inset
+
+ per ogni 
+\begin_inset Formula $k\in\mathcal{K}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{D}=\{D_{k}|\,k\in\mathcal{K}\}$
+\end_inset
+
+ è la famiglia di funzioni di decifratura biiettive tale che 
+\begin_inset Formula $D_{k}:\mathcal{C}\rightarrow\mathcal{P}$
+\end_inset
+
+ per ogni 
+\begin_inset Formula $k\in\mathcal{K}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+tale che per ogni 
+\begin_inset Formula $e\in\mathcal{K}$
+\end_inset
+
+ esiste unica 
+\begin_inset Formula $d\in\mathcal{K}$
+\end_inset
+
+ tale 
+\begin_inset Formula $D_{d}(E_{e}(m))=m$
+\end_inset
+
+, per ogni 
+\begin_inset Formula $m\in\mathcal{P}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le tecniche
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Esistono fondamentalmente due diversi meccanismi di cifratura: a 
+\series bold
+chiave pubblica
+\series default
+ e a 
+\series bold
+chiave privata
+\series default
+ che a loro volta si basano su diversi tipi di 
+\series bold
+algoritmi
+\series default
+.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Crittografia simmetrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Crittografia asimmetrica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diffie-Hellman
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3DES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Curve ellittiche
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RSA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gli algoritmi che permettono l'effettivo funzionamento della crittografia
+ si basano su della matematica parecchio avanzata e in particolare sulla
+ teoria dei numeri, sull'algebra (tipicamente dei campi finiti), sulla teoria
+ della probabilità e sulla teoria della complessità computazionale.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Crittografia simmetrica
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+La 
+\series bold
+crittografia simmetrica
+\series default
+ è un meccanismo che utilizza la stessa chiave per cifrare e decifrare il
+ messaggio.
+\begin_inset Newline newline
+\end_inset
+
+
+\size small
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{10cm}{!}{
+\end_layout
+
+\end_inset
+
+Formalmente 
+\begin_inset Formula $D_{k}(E_{k}(m))=m$
+\end_inset
+
+ per ogni 
+\begin_inset Formula $m\in\mathcal{P}$
+\end_inset
+
+ e per ogni 
+\begin_inset Formula $k\in\mathcal{K}$
+\end_inset
+
+, con 
+\begin_inset Formula $D_{k}$
+\end_inset
+
+ e 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ semplici (veloci) da calcolare.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:M1] (m1) at (0,0) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{macNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label=below:M2] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{macRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label=below:M1] (m3) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Problema!
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+\color red
+E lo scambio della chiave?
+\series default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nella crittografia simmetrica sia il mittente che il ricevente devono conoscere
+ la chiave, cioè devono essersela scambiata in qualche momento.
+ A questo punto però lo scambio della chiave come fa ad avvenire in maniera
+ sicura? Se utilizzassimo di nuovo un metodo di cifratura simmetrico per
+ cifrare la chiave saremmo al punto di partenza.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per questo tipicamente o si utilizza per scambiare la chiave un altro canale
+ considerato sicuro oppure si ricorre alla...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Crittografia asimmetrica
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+La 
+\series bold
+crittografia asimmetrica
+\series default
+ è un meccanismo che funziona con due chiavi.
+ Se si cifra il messaggio con la prima, con la seconda lo si decifra e viceversa.
+\size small
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{7cm}{!}{
+\end_layout
+
+\end_inset
+
+In realtà non è così, ma possiamo immaginarlo in questo modo.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:M1] (m1) at (0,0) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{macNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,label={[align=left]below:chiave
+\backslash
+
+\backslash
+privata/pubblica}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label=below:M2] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{macRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2,label={[align=left]below:chiave
+\backslash
+
+\backslash
+pubblica/privata}] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label=below:M1] (m3) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dogma della crittografia asimmetrica
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+La seguente regola è sempre da rispettare quando si utilizza un 
+\series bold
+sistema crittografico asimmetrico
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Dogma
+\end_layout
+
+\end_inset
+
+Ogni utente deve mantenere segreta una delle chiavi, che chiameremo 
+\series bold
+privata
+\series default
+ e distribuire l'altra, che chiameremo 
+\series bold
+pubblica
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Funzionamento nella comunicazione - confidenzialità
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Vediamo ora come utilizzare la 
+\series bold
+crittografia asimmetrica
+\series default
+ per ottenere la proprietà di 
+\series bold
+confidenzialità
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Per la comunicazione bisogna seguire questi passaggi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.4cm
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Algoritmo per la comunicazione confidenziale
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+1° passo
+\series default
+: cifro il messaggio con la chiave pubblica del destinatario.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+2° passo
+\series default
+: invio il messaggio cifrato.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+3° passo
+\series default
+: il destinatario lo decifra con la sua chiave privata.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In questa maniera mentre il messaggio transita nel canale il messaggio è
+ cifrato e solo chi è in possesso della chiave privata corrispondente a
+ quella pubblica con cui è stato cifrato potrà decrittarlo.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Esempio di comunicazione confidenziale
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Krusciov}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Krusciov.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+textbf{Invio a Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Fidel}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Castro.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Funzionamento nella comunicazione - autenticità
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Vediamo ora come utilizzare la 
+\series bold
+crittografia asimmetrica
+\series default
+ per ottenere la proprietà di 
+\series bold
+autenticità
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Per la comunicazione bisogna seguire questi passaggi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 0.4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Algoritmo per la comunicazione autentica
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+1° passo
+\series default
+: cifro il messaggio con la mia chiave privata.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+2° passo
+\series default
+: invio il messaggio cifrato.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+3° passo
+\series default
+: il destinatario lo decifra con la mia chiave pubblica.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In questa maniera il destinatario è sicuro che il mittente sia proprio chi
+ deve essere (ha infatti utilizzato la propria chiave privata) perché altrimenti
+ non riuscirebbe a decrittare il messaggio con la sua chiave pubblica.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Esempio di comunicazione autentica
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Krusciov}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Krusciov.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveVerde.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+textbf{Invio a Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Fidel}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Castro.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveBlu.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mettiamo tutto insieme!
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Combinando entrambe le metodologie riusciamo ad ottenere sia 
+\series bold
+confidenzialità
+\series default
+, sia l'
+\series bold
+autenticità
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Per la comunicazione sicura bisogna seguire questi passaggi:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Algoritmo per la comunicazione sicura
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+1° passo
+\series default
+: cifro il messaggio con la mia chiave privata.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+2° passo
+\series default
+: cifro il messaggio con la chiave pubblica del destinatario.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+3° passo
+\series default
+: invio il messaggio cifrato.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+4° passo
+\series default
+: il destinatario lo decifra con la sua chiave privata.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\series bold
+5° passo
+\series default
+: il destinatario lo decifra con la mia chiave pubblica.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Esempio conclusivo
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto,scale=0.8, transform shape]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Krusciov}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Krusciov.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveVerde.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,node distance=30mm] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{lucchetto.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveNera.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m2] (mac2) {
+\backslash
+textbf{Invio a Fidel}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset VSpace 0.2cm
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance=20mm,auto,scale=0.8, transform shape]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[label=below:
+\backslash
+textbf{Fidel}] (m) at (0,0) {
+\backslash
+includegraphics[height=2cm]{Castro.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node[right of=m,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}cifrato}}] (m1)  {
+\backslash
+includegraphics[height=0.7cm]{docRosso.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m) edge node {} (m1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=m1] (mac1) {
+\backslash
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (m1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac1,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave privata}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Fidel}}] (chiave1) {
+\backslash
+includegraphics[height=0.4cm]{chiaveRossa.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac1,node distance=30mm] (mac2) {
+\backslash
+includegraphics[height=0.9cm]{lucchettoA.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave1) edge node {} (mac1);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [below of=mac2,node distance=16mm,label={[align=left]below:{
+\backslash
+footnotesize{}chiave pubblica}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}di Nikita}}] (chiave2) {
+\backslash
+includegraphics[height=0.4cm]{chiaveBlu.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [right of=mac2,label={[align=left]below:{
+\backslash
+footnotesize{}messaggio}
+\backslash
+
+\backslash
+{
+\backslash
+footnotesize{}in chiaro}}] (m2) {
+\backslash
+includegraphics[height=0.7cm]{docNero.pdf}};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (chiave2) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac1) edge node {} (mac2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[->] (mac2) edge node {} (m2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conclusioni
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Non abbiamo parlato della 
+\series bold
+disponiblità
+\series default
+ e dell'
+\series bold
+integrità
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La prima è assicurata dal fatto che operazioni di decrittazione sono 
+\begin_inset Quotes eld
+\end_inset
+
+veloci
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per l'
+\series bold
+integrità
+\series default
+ si può utilizzare uno dei tanti protocolli che calcolano l'
+\series bold
+hash
+\series default
+ di un testo, ovvero una 
+\begin_inset Quotes eld
+\end_inset
+
+impronta digitale
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Inviando insieme al testo anche l'hash il destinatario potrà ricalcolare
+ l'hash sul testo arrivato e confrontarlo con quello arrivato.
+ Se coincidono c'è un'altissima probabilità che il testo sia integro, se
+ non coincidono certamente il testo arrivato è diverso da quello spedito.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esempi di protocolli di hash sono 
+\series bold
+SHA
+\series default
+ e 
+\series bold
+MD5
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bibliografia
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+http://web.math.unifi.it/users/fumagal/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+documenti/Crittografia_Capitoli1-6.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+http://poisson.phc.unipi.it/~papini/TCC.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+https://www.iacr.org/authors/tikz/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+https://thenounproject.com/ - Viktor Vorobyev, Apirat Ditsayarak, Guilhem
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
